@@ -1,23 +1,49 @@
 package com.serti.pokeapi.mdl;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "evolutiondetails")
 public class EvolutionDetails {
+	@Id @Column(name = "evolutiondetailid")
+	private int id;
+	@Column(name = "gender")
 	private String gender;
+	@Column(name = "held_item") 
 	private String held_item;
+	@Column(name = "known_move") 
 	private String known_move;
+	@Column(name = "known_move_type") 
 	private String known_move_type;
+	@Column(name = "location") 
 	private String location;
+	@Column(name = "min_affection") 
 	private int min_affection;
+	@Column(name = "min_beauty") 
 	private int min_beauty;
+	@Column(name = "min_happiness") 
 	private int min_happiness;
+	@Column(name = "min_level") 
 	private int min_level;
+	@Column(name = "needs_overworld_rain") 
 	private String needs_overworld_rain;
+	@Column(name = "party_species") 
 	private String party_species;
+	@Column(name = "party_type") 
 	private String party_type;
+	@Column(name = "relative_physical_stats") 
 	private String relative_physical_stats;
+	@Column(name = "time_of_day") 
 	private int time_of_day;
+	@Column(name = "trade_species") 
 	private String trade_species;
+	@Column(name = "turn_upside_down") 
 	private boolean turn_upside_down;
-	private Item item;
 	
 	public String getGender() {
 		return gender;
@@ -115,12 +141,7 @@ public class EvolutionDetails {
 	public void setTurn_upside_down(boolean turn_upside_down) {
 		this.turn_upside_down = turn_upside_down;
 	}
-	public Item getItem() {
-		return item;
-	}
-	public void setItem(Item item) {
-		this.item = item;
-	}
+
 	@Override
 	public String toString() {
 		return "EvolutionDetails [gender=" + gender + ", held_item=" + held_item + ", known_move=" + known_move
@@ -129,7 +150,7 @@ public class EvolutionDetails {
 				+ ", needs_overworld_rain=" + needs_overworld_rain + ", party_species=" + party_species
 				+ ", party_type=" + party_type + ", relative_physical_stats=" + relative_physical_stats
 				+ ", time_of_day=" + time_of_day + ", trade_species=" + trade_species + ", turn_upside_down="
-				+ turn_upside_down + ", item=" + item + "]";
+				+ turn_upside_down+"]";
 	}
 	
 	

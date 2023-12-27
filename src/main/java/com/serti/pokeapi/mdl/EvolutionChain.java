@@ -1,10 +1,19 @@
 package com.serti.pokeapi.mdl;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "evolutionchain")
 public class EvolutionChain {
-	
+	@Id @Column(name = "evolutionchainId")
 	private int id;
+	
+	@Column(name = "baby_trigger_item")
 	private String baby_trigger_item;
-	private Chain chain;
+
 	public int getId() {
 		return id;
 	}
@@ -17,15 +26,10 @@ public class EvolutionChain {
 	public void setBaby_trigger_item(String baby_trigger_item) {
 		this.baby_trigger_item = baby_trigger_item;
 	}
-	public Chain getChain() {
-		return chain;
-	}
-	public void setChain(Chain chain) {
-		this.chain = chain;
-	}
+
 	
 	@Override
 	public String toString() {
-		return "EvolutionChain [id=" + id + ", baby_trigger_item=" + baby_trigger_item + ", chain=" + chain + "]";
+		return "EvolutionChain [id=" + id + ", baby_trigger_item=" + baby_trigger_item + "]";
 	}	
 }

@@ -1,8 +1,22 @@
 package com.serti.pokeapi.mdl;
 
-import java.util.List;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "chain")
 public class Chain {
-	private List<EvolutionDetails> evolution_details;
-	private List<EnvolvesTo> evolves_to;
+	@Id @Column(name = "chainid")
+	private int id;
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	
 }

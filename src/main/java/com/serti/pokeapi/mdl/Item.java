@@ -1,8 +1,18 @@
 package com.serti.pokeapi.mdl;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "item")
 public class Item {
+	@Id @Column(name = "itemid")
 	private int id;
+	@Column(name = "name")
 	private String name;
+	@Column(name = "url")
 	private String url;
 	
 	public int getId() {
