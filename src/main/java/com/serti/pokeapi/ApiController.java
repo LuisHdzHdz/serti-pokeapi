@@ -35,7 +35,7 @@ public class ApiController {
 		accesParam.setClient(clientIp);
 		accesParam.setResource("/pokemon/evolution-chain");
 		accesLogService.saveAccesLog(accesParam);
-		LOGGER.info("Ip del cliente: { }",clientIp);
+		LOGGER.info("Ip del cliente: {}",clientIp);
         return response;
     }
 	
@@ -49,7 +49,21 @@ public class ApiController {
 		accesParam.setClient(clientIp);
 		accesParam.setResource("/pokemon/evolution-chain");
 		accesLogService.saveAccesLog(accesParam);
-		LOGGER.info("Ip del cliente: { }",clientIp);
+		LOGGER.info("Ip del cliente: {}",clientIp);
+        return response;
+    }
+	
+	@CrossOrigin(origins = "http://localhost:4200")
+	@GetMapping("/pokemon/get-sprite")
+    public String getSprite(@RequestParam(value = "pokemon") String pokemon, HttpServletRequest request) {
+		AccessLog accesParam = new AccessLog();
+		String urlPokemon =String.format("https://pokeapi.co/api/v2/pokemon/%s/",pokemon);
+		String response = client.get(urlPokemon);
+		String clientIp = requestService.getClientIp(request);
+		accesParam.setClient(clientIp);
+		accesParam.setResource("/pokemon/get-sprite");
+		accesLogService.saveAccesLog(accesParam);
+		LOGGER.info("Ip del cliente: {}",clientIp);
         return response;
     }
 }
