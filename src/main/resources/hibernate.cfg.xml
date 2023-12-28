@@ -9,5 +9,6 @@
         <property name="hbm2ddl.auto">update</property>
         <!-- Add your classes here -->
         <mapping class="com.serti.pokeapi.mdl.AccessLog" />
+        <mapping class="com.serti.pokeapi.mdl.Pokemons" />
     </session-factory>
 </hibernate-configuration>
